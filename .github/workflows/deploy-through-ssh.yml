@@ -16,11 +16,9 @@ jobs:
       with:
         switches: -avzr --delete
         remote_path: ~/board
-        host: ${{ env.SERVER_PUBLIC_IP }}
-        username: ubuntu
-        key: ${{ env.PRIVATE_SSH_KEY }}
-        envs: PRIVATE_SSH_KEY,REGISTRY,REPOSITORY,IMAGE_TAG,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_DEFAULT_REGION,AWS_REGION
-       
+        remote_host: ${{ secrets.SERVER_PUBLIC_IP }}
+        remote_user: ubuntu
+        remote_key: ${{ secrets.PRIVATE_SSH_KEY }}
     - name: executing remote ssh commands using private key
       uses: appleboy/ssh-action@v1.0.0
       with:
