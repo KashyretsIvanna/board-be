@@ -1,6 +1,5 @@
 import { SharedModule } from '@app/common/shared';
 import { Module } from '@nestjs/common';
-import { ScheduleModule } from '@nestjs/schedule';
 
 import { BoardModule } from '../components/board/board.module';
 import { CardModule } from '../components/card/card.module';
@@ -10,13 +9,7 @@ import { CardController } from '../controllers/card.controller';
 import { CategoryController } from '../controllers/category.controller';
 
 @Module({
-  imports: [
-    SharedModule,
-    ScheduleModule.forRoot(),
-    BoardModule,
-    CategoryModule,
-    CardModule,
-  ],
+  imports: [SharedModule, BoardModule, CategoryModule, CardModule],
   controllers: [BoardsController, CardController, CategoryController],
 })
 export class AppModule {}

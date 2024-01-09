@@ -12,7 +12,7 @@ serviceAccountKey.json
 dist
 tmp
 /out-tsc
-
+.vscode/*
 # dependencies
 node_modules
 

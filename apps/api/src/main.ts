@@ -4,20 +4,11 @@ import { BadRequestException, Logger, ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { ValidationError } from 'class-validator';
-import * as admin from 'firebase-admin';
 
 import { AppModule } from './app/app.module';
 import * as firebaseCreds from '../../../serviceAccountKey.json';
 
 async function bootstrap() {
-  // it must be here, please don't ever change it's position :)
-  admin.initializeApp({
-    credential: admin.credential.cert(
-      firebaseCreds.serviceAccount as admin.ServiceAccount
-    ),
-    storageBucket: firebaseCreds.storageBucket,
-  });
-
   const app = await NestFactory.create(AppModule);
   app.enableCors({ origin: '*' });
 
