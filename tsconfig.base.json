@@ -1,0 +1,54 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "strictPropertyInitialization": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+    
+      "@app/common/configuration": [
+        "libs/common/configuration/src/index.ts"
+      ],
+      "@app/common/dto": [
+        "libs/common/dto/src/index.ts"
+      ],
+      "@app/core/utils": [
+        "libs/core/utils/src/index.ts"
+      ],
+
+      "@app/common/prisma": [
+        "libs/common/prisma/src/index.ts"
+      ],
+      "@app/common/shared": [
+        "libs/common/shared/src/index.ts"
+      ],
+      "@app/common/types": [
+        "libs/common/types/src/index.ts"
+      ],
+     
+      "@app/prisma": [
+        "prisma/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}
