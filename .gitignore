@@ -9,7 +9,6 @@ serviceAccountKey.json
 /public
 
 # compiled output
-dist
 tmp
 /out-tsc
 .vscode/*
