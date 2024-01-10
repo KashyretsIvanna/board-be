@@ -6,7 +6,7 @@
     "docker:fresh": "sudo docker build . -t app:nx-root",
     "migration:run": "prisma migrate deploy",
     "migration:reset": "prisma migrate reset",
-    "seed:run": "prisma db seed",
+    "seed:run": "npm run migration:run",
     "start": "npm run migration:run && node ./dist/apps/api/main.js",
     "pre-commit": "lint-staged",
     "test": "npx nx run-many --target=test",
