@@ -8,7 +8,7 @@
     "migration:reset": "prisma migrate reset",
     "seed:run": "npm run migration:run",
     "start": "npm run migration:run && node ./dist/apps/api/main.js",
-    "build": "",
+    "build": "npm run migration:run && node ./dist/apps/api/main.js",
     "pre-commit": "lint-staged",
     "test": "npx nx run-many --target=test",
     "test:e2e": "npx nx run api-e2e:e2e --skip-nx-cache",
